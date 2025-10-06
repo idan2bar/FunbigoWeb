@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/lexend-deca": "^5.2.10",
     "astro": "^5.14.1"
   }
 }

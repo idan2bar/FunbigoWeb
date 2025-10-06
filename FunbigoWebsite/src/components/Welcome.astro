@@ -1,43 +1,40 @@
 ---
-import funbigoLogo from '../assets/Funbigo Logo Purple.svg';
+import funbigoLogo from '../assets/Funbigo Logo White.svg';
 
 const homePageUrl = 'https://funbigo.com';
 const googlePlayUrl = '/googlePlay';
 const discordUrl = '/discord';
 ---
 
-<div id="container">
-	<main>
-		<section id="hero">
-			<a href={homePageUrl}>
-				<img src={funbigoLogo.src} width="115" height="48" alt="Funbigo Homepage"/>
+<main>
+	<section id="hero" class="mainSection">
+		<a href={homePageUrl}>
+			<img src={funbigoLogo.src} width="115" height="48" alt="Funbigo Homepage"/>
+		</a>
+		<h2>Create and Play 2D Games</h2>
+		<h1>on Mobile!</h1>
+		<p>Create, play, and share 2D games directly on your phone or tablet without coding.</p>
+		<p>Now in early access!</p>
+		<section class="links">
+			<a class="button primary" href={googlePlayUrl}>Download on Google Play</a>
+			<a class="button secondary" href={discordUrl}>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36">
+					<path
+						fill="currentColor"
+						d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z">
+					</path>
+				</svg>
+				Join our Discord
 			</a>
-			<h1>
-				Create and Play 2D Games on Mobile!
-			</h1>
-			<section id="links">
-				<a class="button" href={googlePlayUrl}>Download on Google Play</a>
-				<a href={discordUrl}>
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36">
-						<path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z">
-						</path>
-					</svg>
-					Join our Discord
-				</a>
-			</section>
 		</section>
-	</main>
-</div>
+	</section>
+</main>
 
 <style>
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
 
 	main {
+		color: white;
+		background-image: linear-gradient(135deg, rgb(73, 178, 245) 0%, rgb(79, 69, 249) 100%);
 		height: 100%;
 		display: flex;
 		justify-content: center;
@@ -52,117 +49,64 @@ const discordUrl = '/discord';
 	}
 
 	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
+		font-size: 48px;
+		margin-top: 0;
+		margin-bottom: 0.6em;
+		text-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+	}
+	
+	h2 {
+		font-size: 32px;
+		margin-bottom: 0.25em;
+		text-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 	}
 
-	#links {
+	p {
+		font-size: 20px;
+		line-height: 32px;
+		margin-top: 0;
+		margin-bottom: 0.4em;
+		max-width: 460px;
+	}
+
+	.links {
+		margin-top: 2em;
 		display: flex;
 		gap: 16px;
 	}
 
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
+	.links a svg {
 		height: 1em;
 		margin-right: 16px;
 	}
-
-	#links a.button {
-		color: white;
-		background: #6559FF;
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+	
+	.button {
+		font-size: 20px;
+		display: flex;
+		align-items: center;
 		border-radius: 8px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
+		padding: 16px 22px;
+		text-decoration: none;
+		transition: all 0.2s;
 	}
 	
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
+	.button:hover {
+		transform: scale(1.2);
+	}
+	
+	.secondary {
+		color: white;
+		background-color: rgba(255, 255, 255, 0.05);
 	}
 
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
+	.secondary:hover {
+		background-color: rgba(255, 255, 255, 0.1);
 	}
 
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
+	.primary {
+		color: #6559FF;
+		background: white;
+		font-weight: bold;
+		letter-spacing: 0.05em;
 	}
 </style>

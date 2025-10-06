@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@fontsource/lexend-deca':
+        specifier: ^5.2.10
+        version: 5.2.10
       astro:
         specifier: ^5.14.1
         version: 5.14.1(@types/node@24.6.2)(rollup@4.52.4)(typescript@5.9.3)
@@ -209,6 +212,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/lexend-deca@5.2.10':
+    resolution: {integrity: sha512-8xa0J/pjM4ZbwEJva35UoymspFZyRBgL3M62SyDu47RSmYqE7NB73TlNLrZ9U2mFbcFoqKiXxV+ExNS/+ZtmYA==}
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -1617,6 +1623,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.10':
     optional: true
+
+  '@fontsource/lexend-deca@5.2.10': {}
 
   '@img/colour@1.0.0':
     optional: true
