@@ -7,7 +7,7 @@ const discordUrl = '/discord';
 ---
 
 <main>
-	<section id="hero" class="mainSection">
+	<section class="hero">
 		<a href={homePageUrl}>
 			<img src={funbigoLogo.src} width="115" height="48" alt="Funbigo Homepage"/>
 		</a>
@@ -40,12 +40,12 @@ const discordUrl = '/discord';
 		justify-content: center;
 	}
 
-	#hero {
+	.hero {
 		display: flex;
 		align-items: start;
 		flex-direction: column;
 		justify-content: center;
-		padding: 16px;
+		margin: 40px;
 	}
 
 	h1 {
@@ -108,5 +108,38 @@ const discordUrl = '/discord';
 		background: white;
 		font-weight: bold;
 		letter-spacing: 0.05em;
+	}
+
+	@media (max-width: 740px) {
+		.hero {
+			align-items: stretch;
+		}
+		
+		h1 {
+			font-size: 36px;
+		}
+
+		h2 {
+			font-size: 21px; // 21px so the title fits on one line
+		}
+
+		p {
+			font-size: 18px;
+			line-height: 28px;
+		}
+
+		.links {
+			flex-direction: column;
+		}
+
+		.links {
+			align-items: stretch;
+		}
+		
+		.button {
+			font-size: 16px;
+			display: flex;
+			justify-content: center;
+		}
 	}
 </style>
