@@ -1,0 +1,69 @@
+﻿---
+export const prerender = false;
+
+const { projectId } = Astro.params;
+
+type ProjectData = {
+    Id: string;
+    Name: string;
+    IconId: string;
+    MetaData: {
+        shortDescription: string;
+    };
+};
+
+const response = await fetch( `https://api.funbigo.com/asset/${projectId}`);
+const projectData = await response.json() as ProjectData;
+
+const currentUrl = Astro.request.url;
+const imageUrl = `https://api.funbigo.com/asset/download/${projectData.IconId}`;
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.Funbigo";
+
+if (!response) {
+    Astro.response.status = 404;
+    Astro.response.statusText = 'Not found';
+}
+---
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{projectData.Name}</title>
+    
+        <!-- Open Graph Tags (WhatsApp, Discord, Facebook) -->
+        <meta property="og:title" content={projectData.Name} />
+        <meta property="og:description" content={projectData.MetaData.shortDescription} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={currentUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Funbigo" />
+    
+        <!-- Twitter Card Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={projectData.Name} />
+        <meta name="twitter:description" content={projectData.MetaData.shortDescription} />
+        <meta name="twitter:image" content={imageUrl} />
+    
+        <!-- Smart Redirect Script (Attempts App Open, then falls back to Store) -->
+        <script>
+            const androidIntentUrl =
+                `intent://project/${projectId}#Intent;` +
+                "scheme=https;" +
+                "host=play.funbigo.com;" +
+                "package=com.Funbigo;" +
+                `S.browser_fallback_url=${playStoreUrl};` +
+                "end";
+    
+            window.onload = function() {
+                window.location.replace(androidIntentUrl);
+            };
+        </script>
+    </head>
+    <body>
+        <img src={imageUrl} alt={`${projectData.Name} Icon`} width="100" height="100" />
+        <h1>Redirecting to {projectData.Name}</h1>
+        <p>If the app does not open, please visit the store below.</p>
+        <a href={playStoreUrl}>Download on Google Play</a>
+    </body>
+</html>
