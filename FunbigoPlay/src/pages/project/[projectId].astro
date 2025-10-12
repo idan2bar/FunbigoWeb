@@ -41,18 +41,30 @@ const androidIntentUrl =
         <meta name="twitter:title" content={projectData.Name} />
         <meta name="twitter:description" content={projectData.MetaData.shortDescription} />
         <meta name="twitter:image" content={projectImageUrl} />
-    
-        <!-- Smart Redirect Script (Attempts App Open, then falls back to Store) -->
-        <script>    
-            window.onload = function() {
-                window.location.replace(androidIntentUrl);
-            };
-        </script>
+
+        <style>
+            /* 1. Reset default browser margins and set root elements to 100% height */
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+                overflow: hidden; /* Prevent body scrollbars */
+            }
+
+            /* 3. Set the iframe to fill its container */
+            iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                display: block; /* Removes any potential extra space beneath the iframe */
+            }
+        </style>
+        
+        <!-- Prevent zooming on mobile devices -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
     <body>
-        <img src={projectImageUrl} alt={`${projectData.Name} Icon`} width="100" height="100" />
-        <h1>Redirecting to {projectData.Name}</h1>
-        <p>If the app does not open, please visit the store below.</p>
-        <a href={FUNBIGO_GOOGLE_PLAY_URL}>Download on Google Play</a>
+        <iframe src="/FunbigoPlayUnity/index.html" title="Funbigo Game"></iframe>
     </body>
 </html>
