@@ -1,16 +1,38 @@
 ﻿---
-
+import Layout from '../layouts/Layout.astro';
+import {FUNBIGO_GOOGLE_PLAY_URL} from "../consts";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Funbigo Play</title>
-    </head>
-    <body>
-        <h1>The game was not found.</h1>
-    </body>
-</html>
+
+<Layout>
+    <p class="large-emoji">😕</p>
+    <p class="large-404">404</p>
+    <h1>The game was not found.</h1>
+    <p>But you can explore other games and create your own on the Funbigo app!</p>
+    <a href={FUNBIGO_GOOGLE_PLAY_URL}>Download on Google Play</a>
+</Layout>
+
+<style>
+    .large-emoji {
+        margin: 0 0 10px;
+        font-size: 5em;
+    }
+    .large-404 {
+        margin: 0;
+        font-size: 6em;
+        font-weight: bold;
+    }
+    h1 {
+        color: #333;
+    }
+    a {
+        font-size: 1.2em;
+        display: inline-block;
+        margin-top: 20px;
+        padding: 16px 24px;
+        background-color: #4285F4;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+    }
+</style>

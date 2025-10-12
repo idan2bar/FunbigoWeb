@@ -1,0 +1,34 @@
+---
+import '@fontsource/lexend-deca';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Funbigo Play</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html {
+		height: 100%;
+	}
+	body {
+		margin: -28px 40px 0; /* Top, horizontal, bottom. Negative top margin to visually center the UI. */
+		height: 100%;
+		font-family: 'Lexend Deca', Arial, sans-serif;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background-color: #fafafc;
+	}
+</style>
