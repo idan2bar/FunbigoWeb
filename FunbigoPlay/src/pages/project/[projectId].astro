@@ -22,8 +22,8 @@ const androidIntentUrl =
     "end";
 ---
 
-<html lang="en">
-    <head>
+<html lang="en" > 
+    <head id="head" data-androidIntentUrl={androidIntentUrl}>
         <meta charset="UTF-8">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +46,8 @@ const androidIntentUrl =
         <!-- Smart Redirect Script (Attempts App Open, then falls back to Store) -->
         <script>    
             window.onload = function() {
-                window.location.replace(androidIntentUrl);
+                const head = document.getElementById('head');
+                window.location.replace(head.dataset.androidintenturl);
             };
         </script>
     </head>
@@ -54,18 +55,21 @@ const androidIntentUrl =
         <img src={projectImageUrl} alt={`${projectData.Name} Icon`} width="128" height="128" />
         <h3>Redirecting to</h3>
         <h1>{projectData.Name}</h1>
-        <p>If the app does not open, please visit the store below.</p>
+        <p>If the app doesn't open, you can get it on Google Play.</p>
         <a href={FUNBIGO_GOOGLE_PLAY_URL}>Download on Google Play</a>
     </body>
 </html>
 
 <style>
+    html {
+        height: 100%;
+    }
     body {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
         font-family: 'Lexend Deca', Arial, sans-serif;
         text-align: center;
         margin: 0 40px;
