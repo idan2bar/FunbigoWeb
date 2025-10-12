@@ -55,7 +55,7 @@ const androidIntentUrl =
         <img src={projectImageUrl} alt={`${projectData.Name} Icon`} width="128" height="128" />
         <h3>Redirecting to</h3>
         <h1>{projectData.Name}</h1>
-        <p>If the app doesn't open, you can get it on Google Play.</p>
+        <p>If you don't have the Funbigo app installed, get it first to play the game.</p>
         <a href={FUNBIGO_GOOGLE_PLAY_URL}>Download on Google Play</a>
     </body>
 </html>
@@ -72,8 +72,8 @@ const androidIntentUrl =
         height: 100%;
         font-family: 'Lexend Deca', Arial, sans-serif;
         text-align: center;
-        margin: 0 40px;
         background-color: #fafafc;
+        margin: -28px 40px 0; /* Top, horizontal, bottom. Negative top margin to visually center the UI. */
     }
     img {
         border-radius: 8px;
@@ -90,13 +90,14 @@ const androidIntentUrl =
         margin-bottom: 10px;
     }
     a {
+        font-size: 1.2em;
         display: inline-block;
         margin-top: 20px;
-        padding: 10px 20px;
+        padding: 16px 24px;
         background-color: #4285F4;
         color: white;
         text-decoration: none;
-        border-radius: 5px;
+        border-radius: 8px;
     }
     a:hover {
         background-color: #357AE8;
