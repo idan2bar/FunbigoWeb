@@ -1,8 +1,11 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.Funbigo",
-    "sha256_cert_fingerprints": ["75:84:A3:37:0D:AE:6E:95:32:6F:89:A1:21:B1:9B:C3:F3:1A:41:2E:07:15:26:BA:11:14:2C:4D:9D:2C:E7:9F"]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.Funbigo",
+      "sha256_cert_fingerprints":
+      ["4A:06:B9:A9:DA:AD:9E:AB:6B:50:8A:EF:43:83:51:69:C5:EA:19:58:25:3A:F6:CF:AB:B3:E7:D3:92:6D:36:9D"]
+    }
   }
-}]
+]
