@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.Funbigo",
+    "sha256_cert_fingerprints": ["75:84:A3:37:0D:AE:6E:95:32:6F:89:A1:21:B1:9B:C3:F3:1A:41:2E:07:15:26:BA:11:14:2C:4D:9D:2C:E7:9F"]
+  }
+}]
