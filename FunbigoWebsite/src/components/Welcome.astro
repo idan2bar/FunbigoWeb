@@ -53,6 +53,8 @@ const discordUrl = '/discord';
 		justify-content: center;
 		align-items: center;
 		padding: 0;
+		position: relative;
+		overflow: hidden;
 	}
 
 	.content-wrapper {
@@ -62,6 +64,8 @@ const discordUrl = '/discord';
 		width: 100%;
 		padding: 40px 24px;
 		gap: 40px;
+		position: relative;
+		z-index: 10;
 	}
 
 	.hero {
@@ -76,14 +80,15 @@ const discordUrl = '/discord';
 	}
 
 	h1 {
-		font-size: 48px;
+		font-size: 64px;
 		margin-top: 0;
 		margin-bottom: 0.6em;
 		text-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+		line-height: 1.1;
 	}
 
 	h2 {
-		font-size: 32px;
+		font-size: 40px;
 		margin-bottom: 0.25em;
 		text-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 	}
@@ -93,7 +98,7 @@ const discordUrl = '/discord';
 		line-height: 32px;
 		margin-top: 0;
 		margin-bottom: 0.4em;
-		max-width: 460px;
+		max-width: 500px;
 	}
 
 	.early-access {
@@ -116,10 +121,11 @@ const discordUrl = '/discord';
 		display: flex;
 		align-items: center;
 		border-radius: 8px;
-		padding: 16px 22px;
+		padding: 16px 26px;
 		text-decoration: none;
 		transition: all 0.2s;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		white-space: nowrap;
 	}
 
 	.button:hover {
@@ -188,16 +194,16 @@ const discordUrl = '/discord';
 		}
 
 		h1 {
-			font-size: 36px;
+			font-size: 48px;
 		}
 
 		h2 {
-			font-size: 24px;
+			font-size: 30px;
 		}
 
 		p {
 			font-size: 18px;
-			line-height: 28px;
+			line-height: 32px;
 			max-width: 100%;
 		}
 
@@ -210,10 +216,11 @@ const discordUrl = '/discord';
 		}
 
 		.button {
-			font-size: 16px;
+			font-size: 18px;
 			display: flex;
 			justify-content: center;
-			padding: 12px 18px;
+			padding: 14px 20px;
+			white-space: normal;
 		}
 
 		.graphic-img {
